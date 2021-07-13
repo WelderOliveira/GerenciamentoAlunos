@@ -1,51 +1,52 @@
-#Inicie o Sistema
-*git clone https://github.com/WelderOliveira/GerenciamentoAlunos.git
+# Inicie o Sistema
 
-*cd GerenciamentoAlunos
+- git clone https://github.com/WelderOliveira/GerenciamentoAlunos.git
 
-*composer install
+* cd GerenciamentoAlunos
 
-*npm install
+* composer install
 
-*cp .env.example .env
+* npm install
 
-*php artisan key:generate
+* cp .env.example .env
 
-*Adicione as configurações da sua base de dados, no arquivo .env
+* php artisan key:generate
 
-*php artisan migrate
+* Adicione as configurações da sua base de dados, no arquivo .env
 
-*php artisan serve
+* php artisan migrate
+
+* php artisan serve
 
 
-#API
+# API
 - [X] Cadastrar Usuário
 	```
 	GET - http://127.0.0.1:8000/api/aluno/
 		{
 			"nome": NOMEDOALUNO
 		}
-	´´´
+	
 - [X] Cadastrar Nota Para Usuário
 	```
-		POST - http://127.0.0.1:8000/api/nota
+	POST - http://127.0.0.1:8000/api/nota
 		{
     			"aluno": "3", //id do aluno desejado
     			"nota": 10 //Nota do Aluno.
 		}
-	´´´
+	
 - [X] Listar Usuários
 	```
 		GET - http://127.0.0.1:8000/api/alunos/
-	´´´
+	
 - [X] Listar Notas de um Usuário
 	```
 		GET - http://127.0.0.1:8000/api/nota/{id}
-	´´´
+	
 - [X] Listar todas as Notas
 	```
 		GET - http://127.0.0.1:8000/api/notas
-	´´´
+	
 
 
 >Para solicitar o Cadastro, utilize Key = Content-Type | Value = application/json
