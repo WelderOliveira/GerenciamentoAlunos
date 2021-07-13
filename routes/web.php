@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/alunos','AlunoController@alunos')->name('listaNotas');
+Route::get('/aluno/cadastrarAluno', 'AlunoController@formCadastro');
+Route::post('/aluno/cadastrarAluno', 'AlunoController@cadastrarAluno')->name('cadastrarAluno');
+Route::get('/aluno','AlunoController@listarAlunos')->name('cadastrarNota');
+Route::get('/aluno/{id}','AlunoController@adicionarNota')->name('adicionarNota');
+Route::get('/aluno/{id}','AlunoController@visualizarNota')->name('visualizarNota');
+
