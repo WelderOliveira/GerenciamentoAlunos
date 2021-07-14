@@ -14,27 +14,10 @@ class AlunoController extends Controller
         return view('aluno.alunoNotas',['alunos' => $alunos]);
     }
 
-    public function alunoNotas($id)
-    {
-        $alunos = Aluno::with('notas')->findOrFail($id);
-        return view('aluno.index',['alunos' => $alunos]);
-    }
-
     public function listarAlunos()
     {
         $alunos = aluno::get();
-//        dd($alunos);
-        return view('aluno.index', ['alunos' => $alunos]);
-    }
-
-    public function adicionarNota()
-    {
-        return "NADA AINDA";
-    }
-
-    public function visualizarNota()
-    {
-        return "Nada Ainda";
+        return view('aluno.visualizarAlunos', ['alunos' => $alunos]);
     }
 
     public function formCadastro()
@@ -47,6 +30,6 @@ class AlunoController extends Controller
         Aluno::create([
            'nome' => $request->nome,
         ]);
-        return redirect('alunos');
+        return redirect('/');
     }
 }

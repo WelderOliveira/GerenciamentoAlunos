@@ -12,14 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/alunos','AlunoController@alunos')->name('listaNotas');
+//
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+Route::get('/','AlunoController@alunos')->name('listaNotas');
 Route::get('/aluno/cadastrarAluno', 'AlunoController@formCadastro');
 Route::post('/aluno/cadastrarAluno', 'AlunoController@cadastrarAluno')->name('cadastrarAluno');
-Route::get('/aluno','AlunoController@listarAlunos')->name('cadastrarNota');
-Route::get('/aluno/{id}','AlunoController@adicionarNota')->name('adicionarNota');
-Route::get('/aluno/{id}','AlunoController@visualizarNota')->name('visualizarNota');
+Route::get('/aluno','AlunoController@listarAlunos')->name('ListarAlunos');
+Route::get('/nota/{id}','NotaController@index')->name('cadastrarNota');
+Route::post('/nota/{id}','NotaController@adicionarNota')->name('adicionarNota');
+Route::get('/notas/{id}','NotaController@visualizarNota')->name('visualizarNota');
 

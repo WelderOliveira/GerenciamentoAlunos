@@ -15,7 +15,7 @@ class ApiNotaController extends Controller
      */
     public function index()
     {
-        $nota = aluno::with('notas')->get();
+        $nota = aluno::select('id','nome')->with('notas')->get();
         return response()->json(['notas'=>$nota],200);
 
     }
@@ -45,7 +45,7 @@ class ApiNotaController extends Controller
      */
     public function show($id)
     {
-        $nota = aluno::with('notas')->findOrFail($id);
+        $nota = aluno::select('id','nome')->with('notas')->findOrFail($id);
         return response()->json(['notas'=>$nota],200);
     }
 

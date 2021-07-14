@@ -42,7 +42,7 @@ class ApiAlunoController extends Controller
      */
     public function show($id)
     {
-        $aluno = aluno::findOrFail($id);
+        $aluno = aluno::select('id','nome')->findOrFail($id);
         return response()->json(['aluno'=>$aluno],200);
     }
 
